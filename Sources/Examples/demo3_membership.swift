@@ -5,7 +5,7 @@
 //  Created by Pau Blanes on 10/07/2026.
 //
 
-import CasePathable
+import CaseKeyPath
 
 /*
  Goal: test which case a value is (membership), ignoring the associated value.

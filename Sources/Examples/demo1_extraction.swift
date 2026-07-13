@@ -5,7 +5,7 @@
 //  Created by Pau Blanes on 10/07/2026.
 //
 
-import CasePathable
+import CaseKeyPath
 
 /*
  Goal: pull the associated values of a specific case out of a mixed collection.

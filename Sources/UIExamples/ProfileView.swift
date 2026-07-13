@@ -5,7 +5,7 @@
 
 
 import SwiftUI
-import CasePathable
+import CaseKeyPath
 
 /*
  Goal: Drive two different presentations from the same destination enum and

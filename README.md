@@ -1,4 +1,4 @@
-# CasePathable
+# CaseKeyPath
 
 A small, educational reimplementation of [Point-Free's swift-case-paths](https://github.com/pointfreeco/swift-case-paths), built from scratch to learn how case paths work.
 
@@ -18,16 +18,16 @@ Add the package to your `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/your-org/CasePathable.git", from: "1.0.0"),
+    .package(url: "https://github.com/BlanesP/case-key-path.git", from: "1.0.0"),
 ]
 ```
 
-Then add `CasePathable` to your target:
+Then add `CaseKeyPath` to your target:
 
 ```swift
 .target(
     name: "MyTarget",
-    dependencies: ["CasePathable"]
+    dependencies: ["CaseKeyPath"]
 )
 ```
 
@@ -40,7 +40,7 @@ Requires a Swift 5.9+ toolchain (the `@CasePathable` macro needs macro support).
 Annotate an enum with `@CasePathable`:
 
 ```swift
-import CasePathable
+import CaseKeyPath
 
 @CasePathable
 enum Payment {

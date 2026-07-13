@@ -5,7 +5,7 @@
 //  Created by Pau Blanes on 10/07/2026.
 //
 
-import CasePathable
+import CaseKeyPath
 
 /*
  Goal: do the same extraction of demo_1 with ONE generic helper — passing the case as a

@@ -11,7 +11,7 @@
 //
 
 import SwiftUI
-import CasePathable
+import CaseKeyPath
 
 extension Binding where Value: CasePathable {
     subscript<CaseValue>(dynamicMember keyPath: CaseKeyPath<Value, CaseValue>) -> Binding<CaseValue>? {

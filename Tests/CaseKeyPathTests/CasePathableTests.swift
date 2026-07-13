@@ -1,5 +1,5 @@
 import XCTest
-@testable import CasePathable
+@testable import CaseKeyPath
 
 final class CasePathableTests: XCTestCase {
     func testExample() throws {

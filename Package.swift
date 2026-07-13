@@ -5,7 +5,7 @@ import PackageDescription
 import CompilerPluginSupport
 
 let package = Package(
-    name: "CasePathable",
+    name: "CaseKeyPath",
     platforms: [
         .iOS(.v13),
         .macOS(.v10_15),
@@ -13,10 +13,9 @@ let package = Package(
         .watchOS(.v6),
     ],
     products: [
-        // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
-            name: "CasePathable",
-            targets: ["CasePathable"]),
+            name: "CaseKeyPath",
+            targets: ["CaseKeyPath"]),
         .library(
             name: "UIExamples",
             targets: ["UIExamples"]),
@@ -25,14 +24,12 @@ let package = Package(
         .package(url: "https://github.com/swiftlang/swift-syntax.git", from: "603.0.0"),
     ],
     targets: [
-        // Targets are the basic building blocks of a package. A target can define a module or a test suite.
-        // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
-            name: "CasePathable",
-            dependencies: ["CasePathableMacros"]
+            name: "CaseKeyPath",
+            dependencies: ["CaseKeyPathMacros"]
         ),
         .macro(
-            name: "CasePathableMacros",
+            name: "CaseKeyPathMacros",
             dependencies: [
                 .product(name: "SwiftSyntaxMacros", package: "swift-syntax"),
                 .product(name: "SwiftCompilerPlugin", package: "swift-syntax"),
@@ -40,14 +37,14 @@ let package = Package(
         ),
         .target(
             name: "UIExamples",
-            dependencies: ["CasePathable"]
+            dependencies: ["CaseKeyPath"]
         ),
         .executableTarget(
             name: "Examples",
-            dependencies: ["CasePathable"]
+            dependencies: ["CaseKeyPath"]
         ),
         .testTarget(
-            name: "CasePathableTests",
-            dependencies: ["CasePathable"]),
+            name: "CaseKeyPathTests",
+            dependencies: ["CaseKeyPath"]),
     ]
 )

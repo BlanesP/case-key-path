@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import CasePathable
+import CaseKeyPath
 
 /*
  Goal: Get a binding from an enum case asociated value

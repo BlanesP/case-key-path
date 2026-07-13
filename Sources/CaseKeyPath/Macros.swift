@@ -8,4 +8,4 @@
 @attached(member, names: named(AllCasePaths), named(allCasePaths))
 @attached(extension, conformances: CasePathable)
 public macro CasePathable() =
-    #externalMacro(module: "CasePathableMacros", type: "CasePathableMacro")
+    #externalMacro(module: "CaseKeyPathMacros", type: "CasePathableMacro")
