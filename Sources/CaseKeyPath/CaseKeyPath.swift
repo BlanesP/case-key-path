@@ -19,3 +19,10 @@ extension KeyPath where Value: CasePathProtocol, Value.Enum: CasePathable, Root 
         return casePath.embed(value)
     }
 }
+
+extension KeyPath where Value: CasePathProtocol, Value.Enum: CasePathable, Root == Value.Enum.AllCasePaths, Value.AssociatedValue == Void {
+    public func callAsFunction() -> Value.Enum {
+        let casePath = Value.Enum.allCasePaths[keyPath: self]
+        return casePath.embed(())
+    }
+}

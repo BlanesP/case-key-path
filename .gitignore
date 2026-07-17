@@ -1,0 +1,7 @@
+# SwiftPM build artifacts & dependency checkouts
+.build/
+.swiftpm/xcode/package.xcworkspace/xcuserdata/
+.swiftpm/xcode/xcuserdata/
+
+# macOS
+.DS_Store
