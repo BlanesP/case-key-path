@@ -10,6 +10,8 @@ import Testing
 
 struct EmbedTests {
     
+    // MARK: - Subscript
+    
     @Test func embedUpdatesValueForMatchingCase() {
         // Arrange
         var payment = Payment.cash(10)
@@ -65,13 +67,15 @@ struct EmbedTests {
         // Assert
         #expect(payment == .cash(10))
     }
+    
+    // MARK: - callAsFunction
 
     @Test func callAsFunctionEmbedsValueForSingleValueCase() {
         // Arrange
-        let cashPath: CaseKeyPath<Payment, Int> = \.cash
+        let path: CaseKeyPath<Payment, Int> = \.cash
 
         // Act
-        let result = cashPath(5)
+        let result = path(5)
 
         // Assert
         #expect(result == .cash(5))
@@ -79,10 +83,10 @@ struct EmbedTests {
 
     @Test func callAsFunctionEmbedsBothValuesForMultiValueCase() {
         // Arrange
-        let cashPath: CaseKeyPath<Payment, (String, Int)> = \.transfer
+        let path: CaseKeyPath<Payment, (String, Int)> = \.transfer
 
         // Act
-        let result = cashPath(("ES123", 10))
+        let result = path(("ES123", 10))
 
         // Assert
         #expect(result == .transfer(iban: "ES123", amount: 10))
@@ -90,10 +94,10 @@ struct EmbedTests {
 
     @Test func callAsFunctionEmbedsValuelessCase() {
         // Arrange
-        let cashPath: CaseKeyPath<Payment, Void> = \.free
+        let path: CaseKeyPath<Payment, Void> = \.free
 
         // Act
-        let result = cashPath()
+        let result = path()
 
         // Assert
         #expect(result == .free)
